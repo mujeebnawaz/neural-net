@@ -4,20 +4,12 @@ on:
   push:
     branches:
       - 'feat/**'    
-      - 'main'       
   pull_request:
     branches:
       - main     
 
 jobs:
   run-unit-tests:
-    if: |
-      github.event_name == 'pull_request' ||
-      (
-        github.event_name == 'push' &&
-        startsWith(github.ref, 'refs/heads/feat/') &&
-        github.event.pull_request == null
-      )
     runs-on: ubuntu-latest
 
     steps:
