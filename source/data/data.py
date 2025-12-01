@@ -41,11 +41,12 @@ class Data:
 			f.write(data)
 
 	@staticmethod
-	def store_numpy_data(data, file):
-		if not isinstance(data, np.ndarray):
-			raise TypeError(f"Expected a NumPy array, got {type(data)} instead.")
-			
-		np.save(file, data)
+	def store_numpy(data, file, multiple=False):
+		if not multiple:	
+			np.save(file, data)
+		else:
+			np.savez(file, data)
+
 		print(f"Array saved to '{file}' with shape {data.shape} and dtype {data.dtype}.")
 
 
