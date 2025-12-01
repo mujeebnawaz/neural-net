@@ -5,16 +5,10 @@ from data.data import *
 
 class Layer:
 	
-	def __init__(self, neurons=1, activation=mock, save=False, type=None, weights=[], bias=[]):
+	def __init__(self, neurons=1, activation=mock, type=None):
 		self.neurons = neurons
 		self.activation = activation
-		self.save = save
 		self.type = type
-		# if len(weights) != 0:
-		# 	self.weights = weights
-		# if len(bias) != 0:
-		# 	self.bias = bias
-		...
     
 	def __str__(self):
 		return f"-- Neurons: {self.neurons}, Activation: {self.activation.__name__}, Save: {self.save} --"
@@ -28,7 +22,6 @@ class Layer:
 		activation = self.activation( output )
 		self.output = activation
 		return activation
-
 
 	"""
 	Properties 
