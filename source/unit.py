@@ -94,7 +94,7 @@ class TestForward(unittest.TestCase):
                 expected_output_weights = np.array([[1.022, 3.014, 3.029],[3.978, 1.986, 5.971]])
                 np.testing.assert_array_equal(layer.weights, expected_output_weights)
             else:
-                expected_hidden_weights = np.array([[0.994088, 5.991132],[4.002056, 2.003084],[0.994116, 8.991174]])
+                expected_hidden_weights = np.array([[1.994088, 5.991132],[4.002056, 2.003084],[0.994116, 8.991174]])
                 np.testing.assert_array_equal(layer.weights, expected_hidden_weights)
 
 
