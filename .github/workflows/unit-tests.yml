@@ -8,7 +8,7 @@ on:
   pull_request:
     branches:
       - main     
-      
+
 jobs:
   run-tests:
     runs-on: ubuntu-latest
@@ -27,4 +27,4 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run unit tests
-        run: python3 unit.py
+        run: cd source && python3 unit.py
