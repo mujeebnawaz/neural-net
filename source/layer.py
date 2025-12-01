@@ -5,10 +5,9 @@ from data.data import *
 
 class Layer:
 	
-	def __init__(self, neurons=1, activation=mock, save=False, type=None, weights=[], bias=[]):
+	def __init__(self, neurons=1, activation=mock, type=None):
 		self.neurons = neurons
 		self.activation = activation
-		self.save = save
 		self.type = type
     
 	def __str__(self):

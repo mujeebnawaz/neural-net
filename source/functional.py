@@ -65,23 +65,11 @@ def relu_derivative(x):
 def accuracy(y_true, y_pred):
     return np.mean(np.argmax(y_pred, axis=1) == y_true)
 
-"""
-Weight managament
-"""
-def get_random(shape, method='xavier'):
+def get_random(shape):
     """
-    Returns a weight matrix initialized using Xavier or He initialization.
-    
-    shape: tuple, (n_out, n_in)
-    method: 'xavier' or 'he'
+    Returns a weight matrix initialized using Xavier initialization.
     """
-    n_out, n_in = shape  # automatically infer from shape
+    n_in, n_out = shape  
 
-    if method == 'xavier':
-        std = np.sqrt(2 / (n_in + n_out))
-        return np.random.randn(*shape) * std
-    elif method == 'he':
-        std = np.sqrt(2 / n_in)
-        return np.random.randn(*shape) * std
-    else:
-        return np.random.randn(*shape)
+    limit = np.sqrt(6 / (n_in + n_out))
+    return np.random.uniform(-limit, limit, size=(n_out, n_in)).astype(np.float32)

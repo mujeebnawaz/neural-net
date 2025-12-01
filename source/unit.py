@@ -87,7 +87,7 @@ class TestForward(unittest.TestCase):
 	These weights are manually calculated and computations are validated using LLM (GPT4.1).
     """
     def test_backpropogation(self):
-        self.network_with_activations.train(self.input_data, [0,1])
+        self.network_with_activations.train(self.input_data, [0,1], number_of_classes=2)
         reversed_layers = list(reversed(self.network_with_activations.layers))
         for index, layer in enumerate(reversed_layers):
             if layer.type == 'output':

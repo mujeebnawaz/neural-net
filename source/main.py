@@ -15,4 +15,6 @@ network = Network('mnist',
 data_mnist = Data_MNIST()
 (training_data, training_labels), (testing_data, testing_labels) = data_mnist.get_mnist()
 
-network.train(testing_data, testing_labels)
+network.train(training_data, training_labels, number_of_classes=10)
+
+network.test(testing_data, testing_labels, number_of_classes = 10)
